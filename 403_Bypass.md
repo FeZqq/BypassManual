@@ -1,7 +1,8 @@
 # 403 BYPASS
+<img width="2858" height="1502" alt="403-status-code" src="https://github.com/user-attachments/assets/2d1d55d6-ac1f-4c3c-a329-5a1b12575df5" />
+
 ### Introduction
 The 403 status code indicates that access to the resource is not permitted. In this case, the desired panel, resource, document, etc. can be accessed by changing the code to 200. The steps to follow are listed below. In all examples on this cheat sheet, the endpoint to be accessed with the 200 status code is "api/v2/admin/"
-
 
 ### >_ Proxy/Forwarded Headers
 Certain HTTP headers like "X-Forwarded-For" can be exploited to bypass 403 Forbidden restrictions because some web servers or applications rely on these headers to determine the client’s real IP address. If access control is implemented based on IP whitelisting, an attacker can inject a trusted IP into the X-Forwarded-For header, making the server believe the request originates from an allowed source. This can effectively circumvent IP-based restrictions without altering the source IP at the network level. Essentially, the server trusts the header more than the actual connection, creating an opportunity for unauthorized access. Headers list avaible below:
