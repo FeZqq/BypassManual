@@ -1,4 +1,4 @@
-#Introduction
+# Introduction
 The 403 status code indicates that access to the resource is not permitted. In this case, the desired panel, resource, document, etc. can be accessed by changing the code to 200. The steps to follow are listed below. In all examples on this cheat sheet, the endpoint to be accessed with the 200 status code is "api/v2/admin/"
 
 
@@ -101,3 +101,4 @@ https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logi
 https://github.com/zaproxy/zap-extensions/blob/main/addOns/ascanrulesBeta/src/main/java/org/zaproxy/zap/extension/ascanrulesBeta/ForbiddenBypassScanRule.java
 https://medium.com/infosecmatrix/mastering-403-bypass-techniques-a-penetration-testers-guide-f3a1cb16b9a3
 https://www.youtube.com/watch?v=PvpXRBor-Jw
+
