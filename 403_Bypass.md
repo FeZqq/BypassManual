@@ -1,4 +1,4 @@
-# 403 BYPASS
+# 403 Bypass
 <img width="2858" height="1502" alt="403-status-code" src="https://github.com/user-attachments/assets/2d1d55d6-ac1f-4c3c-a329-5a1b12575df5" />
 
 ### Introduction
@@ -99,6 +99,7 @@ https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logi
 https://github.com/zaproxy/zap-extensions/blob/main/addOns/ascanrulesBeta/src/main/java/org/zaproxy/zap/extension/ascanrulesBeta/ForbiddenBypassScanRule.java
 https://medium.com/infosecmatrix/mastering-403-bypass-techniques-a-penetration-testers-guide-f3a1cb16b9a3
 https://www.youtube.com/watch?v=PvpXRBor-Jw
+
 
 
 
