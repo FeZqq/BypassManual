@@ -92,13 +92,14 @@ This will show that panel.example.com actually resolves to login.backend.com. Th
 Method change bypass is a technique used to circumvent HTTP method–based access controls in web applications or APIs. For example, an endpoint might be restricted to only accept GET or POST requests, returning a 403 Forbidden for other methods. However, some servers or applications may process other HTTP methods without proper normalization or filtering on the backend. For instance, an /admin endpoint may allow only GET requests, but sending a HEAD, TRACE, or OPTIONS request might still be processed as if it were a GET, bypassing the restriction. The logic is that the access control enforces method-based filtering, but the backend handles requests differently or more flexibly, allowing attackers to bypass the restriction by changing the HTTP method.
 
 
-### >_ Resources
+### >_ Referances
 https://www.darkanonsys.com/blogs/E1XTCpTgVy7V5njIXVB9
 https://www.acunetix.com/blog/articles/a-fresh-look-on-reverse-proxy-related-attacks/
 https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf
 https://github.com/zaproxy/zap-extensions/blob/main/addOns/ascanrulesBeta/src/main/java/org/zaproxy/zap/extension/ascanrulesBeta/ForbiddenBypassScanRule.java
 https://medium.com/infosecmatrix/mastering-403-bypass-techniques-a-penetration-testers-guide-f3a1cb16b9a3
 https://www.youtube.com/watch?v=PvpXRBor-Jw
+
 
 
 
