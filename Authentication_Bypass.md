@@ -1,4 +1,7 @@
 # Authentication Bypass
+<img width="1536" height="1024" alt="abp" src="https://github.com/user-attachments/assets/807999fd-e17f-4b0f-8dcc-d558c257b5f9" />
+
+
 ### >_ Introduction
 Authentication bypass is a security vulnerability that allows an attacker to gain unauthorized access to an application or system by evading or manipulating the authentication mechanism. Instead of providing valid credentials, the attacker exploits flaws such as weak session handling, logic errors, misconfigurations, or improper input validation to directly access restricted areas or assume another user’s identity.Below are several methods for authentication bypass.
 
@@ -143,3 +146,4 @@ The -- comments out the password check, so login succeeds without knowing the ac
 - https://www.synack.com/exploits-explained/exploits-explained-5-unusual-authentication-bypass-techniques/
 - https://portswigger.net/support/using-sql-injection-to-bypass-authentication
 - https://www.youtube.com/watch?v=DBNmAJaWcGk
+
