@@ -40,6 +40,8 @@ Example:
 
 SSO note: A similar approach can be applied to SSO systems if the application is misconfigured. For example, if a redirect to the SSO leaks internal responses, it is possible to manipulate the HTTP response—change 302 Found to 200 OK and remove the Location header—allowing access to the application without completing the SSO login.
 
+Note: Response manipulation doesn't always constitute a vulnerability. For example, in this example, if the next panel is accessed after authentication, but no authorization is gained on the panel, it isn't categorized as a vulnerability.
+
 ### >_ JSON Manupulation
 Some systems that use "application/x-www-form-urlencoded" data accept "application/json" data instead. At this point, these can be try:
 
@@ -146,4 +148,5 @@ The -- comments out the password check, so login succeeds without knowing the ac
 - https://www.synack.com/exploits-explained/exploits-explained-5-unusual-authentication-bypass-techniques/
 - https://portswigger.net/support/using-sql-injection-to-bypass-authentication
 - https://www.youtube.com/watch?v=DBNmAJaWcGk
+
 
