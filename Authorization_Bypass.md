@@ -1,4 +1,5 @@
 # Authorization bypass
+<img width="1536" height="1024" alt="athbp" src="https://github.com/user-attachments/assets/dc63d4c6-3c76-40b6-988d-d870d5376a2a" />
 
 ### >_ Introduction
 Authorization bypass can occur in two ways:
@@ -73,8 +74,11 @@ Note: Including a port element along with the address or hostname may also help 
 #### >_ Authorization Bypass via Information Disclouse
 In some case, trace method is allowed by the enpoint. With this method the header can be discovered to bypass the authorization. In this PortSwigger example, accessing the /admin endpoint with the GET method returns a 401 Unauthorized response, while the TRACE method reflects our own IP address in the X-Custom-Ip-Authorization header. By sending a GET request to /admin and including this header set to 127.0.0.1, we are able to bypass authorization and gain access to the admin panel.
 
-<photo1>
-<photo2> 
+<img width="1507" height="875" alt="401_Bypass_1" src="https://github.com/user-attachments/assets/b92fc20d-7538-45ea-b534-aa1e4fb9101f" />
+
+<img width="1512" height="880" alt="401_Bypass_2" src="https://github.com/user-attachments/assets/5b366d1e-c97d-4d5a-abcf-15a284df4352" />
+
+<img width="1514" height="882" alt="401_Bypass_3" src="https://github.com/user-attachments/assets/fc7600b3-2867-4574-a5d4-e5e9254ed0aa" />
 
 #### >_ Authorization bypass due to cache misconfiguration
 Authorization bypass due to cache misconfiguration occurs when a server temporarily stores responses to requests, including sensitive data, in a cache that can be accessed by other users. If access controls are not properly enforced on cached responses, lower-privileged users may receive data intended for higher-privileged accounts. This creates a short time window during which unauthorized users can exploit the cached data to bypass restrictions, highlighting the importance of properly handling sensitive responses in caching mechanisms. (https://rikeshbaniya.medium.com/authorization-bypass-due-to-cache-misconfiguration-fde8b2332d2d)
@@ -116,4 +120,5 @@ If the response still returns user 123’s private data, the application is vuln
 - https://projectdiscovery.io/blog/atlassian-confluence-auth-bypass
 - https://medium.com/@manikandannarayanaswamy/how-i-bypassed-authorization-using-expired-jwt-7eef4feca9ca
 - https://www.komodosec.com/post/google-groups-authorization-bypass
+
 - https://hackerone.com/reports/205000
