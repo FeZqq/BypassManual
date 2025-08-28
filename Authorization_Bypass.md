@@ -15,8 +15,8 @@ In short, horizontal bypass allows unauthorized access between users of the same
 If you have both user and admin account, test admin functions with user session value. For example:
 
 ```
-		GET /admin/dashboard
-		Cookie: session=user_token
+	GET /admin/dashboard
+	Cookie: session=user_token
 ```
 If the response still returns admin content while using a normal user session, the application is vulnerable to vertical authorization bypass.
 Note: Sometimes, developers perform authorization validation at the GUI level only, and leave the functions without authorization validation, this potentially resulting in a vulnerability.
@@ -44,9 +44,9 @@ If you don't have an admin or any high authority account you have to find these 
 Some web applications support non-standard HTTP headers like X-Original-URL or X-Rewrite-URL, which allow the request URL to be overridden by the value specified in the header. This can be abused when the application is behind an access control mechanism that restricts certain paths, such as /admin or /console. By manipulating these headers, an attacker may bypass URL-based access restrictions. For example, sending a request like:
 
 ```
-		GET / HTTP/1.1
-		Host: example.com
-		X-Original-URL: /admin
+	GET / HTTP/1.1
+	Host: example.com
+	X-Original-URL: /admin
 ```
 could cause the server to process the request as if it were targeting /admin, potentially exposing restricted functionality.
 
@@ -122,4 +122,5 @@ If the response still returns user 123’s private data, the application is vuln
 - https://www.komodosec.com/post/google-groups-authorization-bypass
 
 - https://hackerone.com/reports/205000
+
 
