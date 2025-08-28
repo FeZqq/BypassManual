@@ -21,7 +21,7 @@ On Burp Proxy, enable the intercept and capture the request. Then right-click th
 
 Example:
 
-	Request:
+Request:
 ```
 	{
 		"username":"admin",
@@ -29,7 +29,7 @@ Example:
 	}
 ```
 
-	Response:
+Response:
 ```
 	{
 		"login_status":false
@@ -148,6 +148,7 @@ The -- comments out the password check, so login succeeds without knowing the ac
 - https://www.synack.com/exploits-explained/exploits-explained-5-unusual-authentication-bypass-techniques/
 - https://portswigger.net/support/using-sql-injection-to-bypass-authentication
 - https://www.youtube.com/watch?v=DBNmAJaWcGk
+
 
 
 
