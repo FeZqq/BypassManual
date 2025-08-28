@@ -4,9 +4,9 @@
 ### >_ Introduction
 Authorization bypass can occur in two ways:
 
-	- Horizontal authorization bypass: The user remains within their own role but gains access to resources that belong to other users.
+- Horizontal authorization bypass: The user remains within their own role but gains access to resources that belong to other users.
 
-	- Vertical authorization bypass: A lower-privileged user gains access to functions or resources intended only for higher-privileged users.
+- Vertical authorization bypass: A lower-privileged user gains access to functions or resources intended only for higher-privileged users.
 
 In short, horizontal bypass allows unauthorized access between users of the same privilege level, while vertical bypass lets a user act with higher privileges than they should have.
 
@@ -14,10 +14,10 @@ In short, horizontal bypass allows unauthorized access between users of the same
 
 If you have both user and admin account, test admin functions with user session value. For example:
 
-	```
+```
 		GET /admin/dashboard
 		Cookie: session=user_token
-	```
+```
 If the response still returns admin content while using a normal user session, the application is vulnerable to vertical authorization bypass.
 Note: Sometimes, developers perform authorization validation at the GUI level only, and leave the functions without authorization validation, this potentially resulting in a vulnerability.
 
@@ -43,11 +43,11 @@ If you don't have an admin or any high authority account you have to find these 
 #### >_ Testing for Special Request Header Handling
 Some web applications support non-standard HTTP headers like X-Original-URL or X-Rewrite-URL, which allow the request URL to be overridden by the value specified in the header. This can be abused when the application is behind an access control mechanism that restricts certain paths, such as /admin or /console. By manipulating these headers, an attacker may bypass URL-based access restrictions. For example, sending a request like:
 
-	```
+```
 		GET / HTTP/1.1
 		Host: example.com
 		X-Original-URL: /admin
-	```
+```
 could cause the server to process the request as if it were targeting /admin, potentially exposing restricted functionality.
 
 #### >_ Other Headers to Consider
@@ -91,22 +91,22 @@ In some web applications, authorization bypass vulnerabilities can be exploited 
 
 For each role:
 
-    - Register or generate two users with identical privileges.
-    - Establish and keep two different sessions active (one for each user).
-    - For every request, change the relevant parameters and the session identifier from token one to token two and diagnose the responses for each token.
-    - An application will be considered vulnerable if the responses are the same, contain same private data or indicate successful operation on other users’ resource or data.
+- Register or generate two users with identical privileges.
+- Establish and keep two different sessions active (one for each user).
+- For every request, change the relevant parameters and the session identifier from token one to token two and diagnose the responses for each token.
+- An application will be considered vulnerable if the responses are the same, contain same private data or indicate successful operation on other users’ resource or data.
 
 Example:
-	```
+```
 	GET /user/profile?id=123
 	Cookie: session=token_user1
-	```
+```
 
 Change to:
-	```
+```
 	GET /user/profile?id=123
 	Cookie: session=token_user2
-	```
+```
 
 If the response still returns user 123’s private data, the application is vulnerable to horizontal authorization bypass (in other words, IDOR).
 
