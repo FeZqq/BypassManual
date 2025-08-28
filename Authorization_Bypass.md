@@ -76,7 +76,7 @@ In some case, trace method is allowed by the enpoint. With this method the heade
 
 <img width="1507" height="875" alt="401_Bypass_1" src="https://github.com/user-attachments/assets/b92fc20d-7538-45ea-b534-aa1e4fb9101f" />
 
-<img width="1512" height="880" alt="401_Bypass_2" src="https://github.com/user-attachments/assets/5b366d1e-c97d-4d5a-abcf-15a284df4352" />
+<img width="1512" height="880" alt="401_Bypass_2" src="https://github.com/user-attachments/assets/4bb7cd7b-630b-474f-86a1-804ea25082a7" />
 
 <img width="1514" height="882" alt="401_Bypass_3" src="https://github.com/user-attachments/assets/fc7600b3-2867-4574-a5d4-e5e9254ed0aa" />
 
@@ -122,3 +122,4 @@ If the response still returns user 123’s private data, the application is vuln
 - https://www.komodosec.com/post/google-groups-authorization-bypass
 
 - https://hackerone.com/reports/205000
+
