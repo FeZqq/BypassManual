@@ -1,4 +1,5 @@
 # Captcha Bypass
+<img width="1536" height="1024" alt="cbs" src="https://github.com/user-attachments/assets/dec469e2-560a-4778-8fbd-fcea8c973fa3" />
 
 ### Introduction
 Captcha bypass refers to techniques used to circumvent CAPTCHA mechanisms that are designed to distinguish humans from automated bots. This can happen due to weak implementations, such as when CAPTCHA validation is only performed on the client-side without proper server-side checks, allowing attackers to skip or manipulate requests. In other cases, flaws like predictable tokens, reuse of the same challenge, or misconfigured integrations with third-party CAPTCHA services can enable bypassing. Automated tools, OCR (Optical Character Recognition), or machine learning models may also be used to solve CAPTCHAs at scale. Ultimately, a CAPTCHA bypass undermines the intended protection against automated abuse, such as brute-force attacks, credential stuffing, or mass registration.
@@ -45,4 +46,5 @@ This vulnerability occurs when the CAPTCHA mechanism validates the first request
 - https://hackerone.com/reports/210417
 - https://medium.com/@abhishekY495/bypassing-captcha-17c59d37f459
 - https://infosecwriteups.com/weird-story-of-captcha-to-rate-limit-bypass-c62690db39a
+
 - https://medium.com/@batuhanaydinn/bug-bounty-hunter-captcha-bypass-response-to-this-request-a1438e503db6
