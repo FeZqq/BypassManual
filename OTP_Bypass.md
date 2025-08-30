@@ -1,4 +1,5 @@
 # One Time Password (OTP) Bypass
+<img width="1536" height="1024" alt="otpb" src="https://github.com/user-attachments/assets/267cfdf2-2961-423e-8ce4-75e075b49f5c" />
 
 ### >_ Introduction
 A One-Time Password (OTP) is a temporary, single-use code generated for authentication, often sent via SMS, email, or an authenticator app, and used to verify a user’s identity during login or transactions, adding an extra security layer beyond static passwords. OTP bypass occurs when an attacker manages to circumvent this protection, typically by exploiting flaws such as intercepting SMS messages, abusing misconfigurations in the verification logic (e.g., accepting reused or predictable codes, or skipping OTP checks entirely), leveraging social engineering to trick users into sharing codes, or manipulating API requests to bypass the OTP validation step.
@@ -103,10 +104,10 @@ This method relies on poor OTP generation logic, lack of per-user uniqueness, or
 To do this method:
 1- Create both request on repeater
 2- Select "New Tab Group" end of the tabs in repeater.
-<image>
+<img width="1262" height="129" alt="burp1" src="https://github.com/user-attachments/assets/3836d077-98ac-4f5a-a97d-87aaa440f675" />
 
 3- Select "Send Group in Parallel" at send menu.
-<image>
+<img width="389" height="259" alt="burp2" src="https://github.com/user-attachments/assets/f68def11-7499-45c8-a515-f0458e89058d" />
 
 ### >_ Infinite OTP Regeneration
 Infinite OTP Regeneration is a technique that exploits systems allowing unlimited OTP requests without restrictions. If an application does not implement rate limiting, lockouts, or request throttling, an attacker can repeatedly request new OTPs for a target account and try a set of common or likely OTPs (like 0000, 1234, 1111) until one of them is accepted.
@@ -141,4 +142,5 @@ This method works because the server does not limit OTP generation or attempts, 
 
 ### >_ Referances
 - https://hackerone.com/reports/897385
+
 - https://medium.com/@k.raksshitha/otp-bypass-b3ea10091f34
