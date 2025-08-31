@@ -145,9 +145,13 @@ The -- comments out the password check, so login succeeds without knowing the ac
 
 ### >_ Referances
 - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/04-Testing_for_Bypassing_Authentication_Schema
+  
 - https://www.synack.com/exploits-explained/exploits-explained-5-unusual-authentication-bypass-techniques/
+
 - https://portswigger.net/support/using-sql-injection-to-bypass-authentication
+
 - https://www.youtube.com/watch?v=DBNmAJaWcGk
+
 
 
 
