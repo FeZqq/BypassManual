@@ -94,11 +94,17 @@ Method change bypass is a technique used to circumvent HTTP method–based acces
 
 ### >_ Referances
 - https://www.darkanonsys.com/blogs/E1XTCpTgVy7V5njIXVB9
+
 - https://www.acunetix.com/blog/articles/a-fresh-look-on-reverse-proxy-related-attacks/
+
 - https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf
+
 - https://github.com/zaproxy/zap-extensions/blob/main/addOns/ascanrulesBeta/src/main/java/org/zaproxy/zap/extension/ascanrulesBeta/ForbiddenBypassScanRule.java
+
 - https://medium.com/infosecmatrix/mastering-403-bypass-techniques-a-penetration-testers-guide-f3a1cb16b9a3
+
 - https://www.youtube.com/watch?v=PvpXRBor-Jw
+
 
 
 
