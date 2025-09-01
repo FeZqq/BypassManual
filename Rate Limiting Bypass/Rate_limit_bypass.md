@@ -1,18 +1,12 @@
 # Rate Limiting Bypass
+![rl](https://github.com/user-attachments/assets/0594c64e-8ace-414d-95d1-e523ba244325)
 
 ### >_ Introduction
 Rate limiting is a fundamental security mechanism used by web applications and APIs to control the number of requests a client can make within a certain time frame, preventing abuse, brute-force attacks, and resource exhaustion. It is typically enforced based on identifiers such as IP addresses, user accounts, or API keys. However, improper implementation or assumptions about client identity can introduce weaknesses. Attackers can exploit these weaknesses through techniques such as header manipulation, proxy chaining, or distributed requests to bypass rate limiting controls, effectively sending far more requests than intended. Understanding both the purpose of rate limiting and the methods of bypassing it is crucial for designing robust systems and performing effective security assessments. 
 
 
-### >_ Rate Limiting Control on DNS Server
-In some systems, rate limiting is applied based on the requested domain name rather than the client IP. If the server does not enforce strict Host header checks, sending requests directly to the server’s IP address can bypass domain-based rate limiting. Each request to the IP may be treated as a new client, effectively circumventing limits tied to the domain.
-
-Limitations:
-
-- If the server validates the Host header, sending the domain in the header while requesting the IP may still trigger the rate limit.
-
-- Direct IP access may cause TLS/HTTPS certificate mismatches if the certificate is issued for the domain.
-
+### >_ Slowing Down Requests
+One of the simplest methods to bypass rate limiting is slowing down requests. Instead of sending many requests in a short period, making requests at a slower rate can help remain under the radar of rate limiting mechanisms. This approach can be time-consuming but can effectively bypass basic rate limiting configurations.
 
 ### >_ Internal Network via Proxy Headers
 Rate limiting is usually applied based on an IP address, but some applications behind a proxy or load balancer rely on HTTP headers like X-Forwarded-For instead of the real client IP. If the server accepts this header without validation and treats internal network IPs as “trusted,” an attacker can set the header to an internal IP, making requests appear to come from the internal network and bypass rate limiting, allowing unlimited requests to the same endpoint. Here are the most common proxy headers:
@@ -74,6 +68,21 @@ If request parameters are not properly normalized or validated, appending specia
 ### >_ Bypassing rate limits via race conditions
 If you send multiple requests in parallel using Burp’s Turbo Intruder, the server’s rate-limiting mechanism may fail to block all of them. For example, if the limit is applied per IP or per session, sending requests simultaneously with slight timing differences or without certain cookies can allow more requests than intended, effectively bypassing the restriction. This shows that naive rate-limiting can be evaded simply by increasing concurrency or altering headers that the server uses to track request counts. (https://portswigger.net/web-security/race-conditions/lab-race-conditions-bypassing-rate-limits)
 
+### >_ URL Parameter Manipulation
+Sometimes, modifying URL parameters can create unique requests that evade rate limits. Adding random query parameters or altering existing ones can make each request appear distinct.
+
+### >_ User-Agent Spoofing
+Manipulating the 'User-Agent' header in requests can mimic legitimate user agents, allowing requests to bypass rate limits that are based on user-agent strings. This makes it possible for traffic to blend in with regular user activity and avoid triggering rate limiting protections.
+
+### >_ Rate Limiting Control on DNS Server
+In some systems, rate limiting is applied based on the requested domain name rather than the client IP. If the server does not enforce strict Host header checks, sending requests directly to the server’s IP address can bypass domain-based rate limiting. Each request to the IP may be treated as a new client, effectively circumventing limits tied to the domain.
+
+Limitations:
+
+- If the server validates the Host header, sending the domain in the header while requesting the IP may still trigger the rate limit.
+
+- Direct IP access may cause TLS/HTTPS certificate mismatches if the certificate is issued for the domain.
+
 ### >_ Referances
 - https://hackerone.com/reports/2627062
 
@@ -88,3 +97,5 @@ If you send multiple requests in parallel using Burp’s Turbo Intruder, the ser
 - https://infosecwriteups.com/unique-rate-limit-bypass-worth-1800-6e2947c7d972
 
 - https://portswigger.net/web-security/race-conditions/lab-race-conditions-bypassing-rate-limits
+
+- https://www.certuscyber.com/insights/rate-limiting-protect-network/
