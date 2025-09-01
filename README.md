@@ -2,7 +2,7 @@
 
 A cheatsheet of techniques for bypassing critical web mechanisms, designed for penetration testers, bug bounty hunters, and anyone interested in cybersecurity.
 
-Current Cheatsheets:
+### Current Cheatsheets:
 - 403 Bypass
 - Authentication Bypass
 - Authorization Bypass
