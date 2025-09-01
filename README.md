@@ -1,2 +1,2 @@
-# BypassAllTheThings
-Bypassing many mechanisms
+# BypassManual
+
