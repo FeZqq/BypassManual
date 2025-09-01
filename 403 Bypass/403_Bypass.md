@@ -25,6 +25,7 @@ Client-IP: 127.0.0.1
 True-Client-IP: 127.0.0.1
 Cluster-Client-IP: 127.0.0.1
 X-ProxyUser-Ip: 127.0.0.1
+Forwarded: for=192.0.2.60; proto=http; by=203.0.113.43
 ```
 
 ### >_ Path Normalization
@@ -104,6 +105,7 @@ Method change bypass is a technique used to circumvent HTTP method–based acces
 - https://medium.com/infosecmatrix/mastering-403-bypass-techniques-a-penetration-testers-guide-f3a1cb16b9a3
 
 - https://www.youtube.com/watch?v=PvpXRBor-Jw
+
 
 
 
