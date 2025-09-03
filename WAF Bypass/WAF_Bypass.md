@@ -1,5 +1,5 @@
 # Web Application Firewall Bypass
-![waf_bypass](https://github.com/user-attachments/assets/abb51831-0a90-4ec1-9cbe-1d646a76e07f)
+<img width="1526" height="1024" alt="WAF Bypass" src="https://github.com/user-attachments/assets/bd62dedb-1cf0-4109-9d7f-ec45f513a5c0" />
 
 ### >_ Introduction
 Web Application Firewalls (WAFs) are a critical layer of defense designed to detect and block malicious web traffic before it reaches an application. However, like any security mechanism, they are not impervious to sophisticated techniques. WAF bypass involves understanding how these systems inspect and filter requests, identifying gaps or weaknesses, and crafting payloads that evade detection. By studying these methods, security professionals, penetration testers, and bug bounty hunters can better evaluate application security, uncover hidden vulnerabilities, and strengthen defenses against potential attacks.
@@ -169,6 +169,7 @@ Suppose a WAF blocks SELECT statements but only when written in uppercase. By an
 - https://www.pmnh.site/post/writeup_spring_el_waf_bypass/
 
 - https://portswigger.net/research/bypassing-wafs-with-the-phantom-version-cookie
+
 
 
 
