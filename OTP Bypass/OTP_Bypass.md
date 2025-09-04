@@ -102,11 +102,15 @@ Content-Type: application/json
 This method relies on poor OTP generation logic, lack of per-user uniqueness, or time-based synchronization flaws.
 
 To do this method:
-1- Create both request on repeater
+
+1- Create both request on repeater.
+
 2- Select "New Tab Group" end of the tabs in repeater.
+
 <img width="1262" height="129" alt="burp1" src="https://github.com/user-attachments/assets/3836d077-98ac-4f5a-a97d-87aaa440f675" />
 
 3- Select "Send Group in Parallel" at send menu.
+
 <img width="389" height="259" alt="burp2" src="https://github.com/user-attachments/assets/f68def11-7499-45c8-a515-f0458e89058d" />
 
 ### >_ Infinite OTP Regeneration
@@ -144,3 +148,4 @@ This method works because the server does not limit OTP generation or attempts, 
 - https://hackerone.com/reports/897385
 
 - https://medium.com/@k.raksshitha/otp-bypass-b3ea10091f34
+
