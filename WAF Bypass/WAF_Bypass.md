@@ -154,7 +154,7 @@ An attacker wants to perform a SQL injection but the WAF blocks the keyword UNIO
 Reverse-engineering a WAF involves analyzing how the firewall processes input to understand its detection rules. By studying which patterns are blocked, which characters are normalized, and how payloads are parsed, an attacker can craft input that intentionally avoids detection. This is a more sophisticated method than brute force and allows targeted bypasses.
 
 Example:
-Suppose a WAF blocks SELECT statements but only when written in uppercase. By analyzing responses, an attacker discovers that lowercase keywords are not filtered. They can then send "select * from users" instead of "SELECT * FROM users", successfully bypassing the WAF.
+- Suppose a WAF blocks SELECT statements but only when written in uppercase. By analyzing responses, an attacker discovers that lowercase keywords are not filtered. They can then send "select * from users" instead of "SELECT * FROM users", successfully bypassing the WAF.
 ----------------------------------------------------------------------
 
 ### >_ Referances
@@ -169,6 +169,7 @@ Suppose a WAF blocks SELECT statements but only when written in uppercase. By an
 - https://www.pmnh.site/post/writeup_spring_el_waf_bypass/
 
 - https://portswigger.net/research/bypassing-wafs-with-the-phantom-version-cookie
+
 
 
 
