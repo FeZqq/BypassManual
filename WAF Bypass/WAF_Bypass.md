@@ -30,6 +30,24 @@ Example:
 ```
 http://www.website.com/products.aspx?%productid=select 1,2,3
 ```
+### >_ Using CNAME
+A CNAME (Canonical Name) record in DNS acts as an alias, pointing one domain to another. For example, if panel.example.com has a CNAME pointing to login.backend.com, it means that panel.example.com is just an alias and the real resource is login.backend.com. Using a tool like dig, you can reveal this mapping:
+
+```
+dig panel.example.com CNAME
+```
+
+Or in Windows:
+```
+Resolve-DnsName www.example.com -Type CNAME
+```
+
+```
+nslookup -type=CNAME www.example.com
+```
+
+This will show that panel.example.com actually resolves to login.backend.com. The bypass logic comes into play when the waf on the only alias domain. All that needs to be done is to send the malicious request to the CNAME record.
+
 
 ### >_ Proxy/Forwarded Headers
 - Some WAFs are configured to trust requests coming from internal IP addresses, meaning input validation is not applied to them. If the WAF determines the client’s IP based on HTTP headers that can be manipulated by the user, such as X-Originating-IP, X-Forwarded-For, X-Remote-IP, or X-Remote-Addr, an attacker can forge these headers to appear as though the request originates from a trusted internal source, effectively bypassing WAF protections.
@@ -169,6 +187,7 @@ Example:
 - https://www.pmnh.site/post/writeup_spring_el_waf_bypass/
 
 - https://portswigger.net/research/bypassing-wafs-with-the-phantom-version-cookie
+
 
 
 
