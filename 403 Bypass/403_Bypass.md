@@ -85,7 +85,19 @@ Encoding tricks exploit the fact that different layers of a system (such as WAFs
 ### >_ Using CNAME
 A CNAME (Canonical Name) record in DNS acts as an alias, pointing one domain to another. For example, if panel.example.com has a CNAME pointing to login.backend.com, it means that panel.example.com is just an alias and the real resource is login.backend.com. Using a tool like dig, you can reveal this mapping:
 
+```
 dig panel.example.com CNAME
+```
+
+Or in Windows:
+```
+Resolve-DnsName www.example.com -Type CNAME
+```
+
+```
+nslookup -type=CNAME www.example.com
+```
+
 
 This will show that panel.example.com actually resolves to login.backend.com. The bypass logic comes into play when security restrictions, such as a 403 Forbidden, are applied only on the alias domain (panel.example.com). By accessing the underlying target domain (login.backend.com) directly, an attacker can reach the same resource without hitting the access control, because the restriction was not enforced on the canonical domain. In short, a CNAME points a domain to another, and discovering it can allow bypassing domain-specific access controls.
 
@@ -105,6 +117,7 @@ Method change bypass is a technique used to circumvent HTTP method–based acces
 - https://medium.com/infosecmatrix/mastering-403-bypass-techniques-a-penetration-testers-guide-f3a1cb16b9a3
 
 - https://www.youtube.com/watch?v=PvpXRBor-Jw
+
 
 
 
