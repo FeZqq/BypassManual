@@ -143,6 +143,22 @@ SELECT * FROM users WHERE username = 'admin'--' AND password = '';
 ```
 The -- comments out the password check, so login succeeds without knowing the actual password.	
 
+### >_ Sensitive Info Leak Endpoint
+
+1. find a api sensitive endpoint (must be leak sensitive info)
+
+2. look headers "Cache-Control, CF-Cache-Status, Via, X-Cache, ETag, Age" confirm they store cache or not. (if stored try web cache deception)
+
+3. change the HTTP request method (like: GET to POST, GET to HEAD, POST to PUT etc.)
+
+4. if you find endpoints like: /api/users/123 use array based iDOR vulnerability (like: /api/users/123,122)
+
+<img width="1241" height="826" alt="Ekran görüntüsü 2025-10-18 203257" src="https://github.com/user-attachments/assets/079b9cbc-f6a1-44c7-b562-36d91325d83a" />
+
+
+(via: https://x.com/darkshadow2bd)
+
+
 ### >_ Referances
 - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/04-Testing_for_Bypassing_Authentication_Schema
   
@@ -151,6 +167,7 @@ The -- comments out the password check, so login succeeds without knowing the ac
 - https://portswigger.net/support/using-sql-injection-to-bypass-authentication
 
 - https://www.youtube.com/watch?v=DBNmAJaWcGk
+
 
 
 
