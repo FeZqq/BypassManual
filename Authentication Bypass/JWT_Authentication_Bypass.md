@@ -13,8 +13,12 @@ If the server doesn't verify a JWT's signature, any payload fields—username, r
 
 <img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss2.png" />
 
-### >_ Flawed Signature Verification
+### >_ Flawed Signature Verification (None Signature)
+If a server accepts alg: "none" and skips signature verification, an attacker can remove the signature and use a forged payload to gain any privileges.JWT verification should confirm the signature proves the token wasn’t tampered with. If the server blindly trusts the token header and treats alg: "none" as “no signature required,” it never checks that the payload is legitimate — so any claims (username, role, permissions) can be changed and accepted.
 
+<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss3.png" />
+
+<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss4.png" />
 
 ### >_ Weak Signing Key
 Will be continue..
