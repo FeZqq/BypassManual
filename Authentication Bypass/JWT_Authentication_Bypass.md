@@ -12,3 +12,26 @@ If the server doesn't verify a JWT's signature, any payload fields—username, r
 <img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss1.png" />
 
 <img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss2.png" />
+
+### >_ Flawed Signature Verification
+
+
+### >_ Weak Signing Key
+Will be continue..
+
+### >_ JWK Header Injection
+Will be continue..
+
+### >_ JKU Header Injection
+Will be continue..
+
+### >_ Kid Header Path Traversal
+Will be continue..
+
+### >_ Algorithm Confusion
+Will be continue..
+
+### >_ No Exposed Key
+Will be continue..
+
+
