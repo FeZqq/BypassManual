@@ -10,3 +10,5 @@ Note: We will be using Burp Suite JWT Editor in all tutorial. You can download i
 If the server doesn't verify a JWT's signature, any payload fields—username, role, permissions, etc.—can be altered by an attacker. For example, changing role: "administrator" and sending the modified token will be accepted, granting elevated access. The result is authentication bypass, privilege escalation, and possible account/data compromise.
 
 <img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss1.png" />
+
+<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss2.png" />
