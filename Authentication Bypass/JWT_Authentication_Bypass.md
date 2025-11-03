@@ -35,7 +35,16 @@ It brute‑forces the JWT secret using hashcat. Then, using the recovered secret
 
 
 ### >_ JWK Header Injection
-Will be continue..
+A JWK header is a field in a JWT header that can carry information about a JSON Web Key (a public key) used to verify the token. When a server accepts a JWK supplied inside the token header, it may use that attacker-controlled public key to validate the token’s signature.
+
+<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss8.png" />
+
+<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss9.png" />
+
+<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss10.png" />
+
+<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss11.png" />
+
 
 ### >_ JKU Header Injection
 Will be continue..
