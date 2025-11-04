@@ -53,6 +53,11 @@ JKU header is the URL information located in the header section of the JWT struc
 
 Step 1: Creating RSA key and add key on our exploit server as body.
 
+<img alt="JWT_Bypass" src="./img/ss12.png" />
+
+<img alt="JWT_Bypass" src="./img/ss13.png" />
+
+<img alt="JWT_Bypass" src="./img/ss14.png" />
 
 Paste JWK in these structure:
 ```
@@ -62,6 +67,7 @@ Paste JWK in these structure:
     ]
 }
 ```
+<img alt="JWT_Bypass" src="./img/ss15.png" />
 
 
 ### >_ Kid Header Path Traversal
