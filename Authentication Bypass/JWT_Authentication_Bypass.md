@@ -1,4 +1,4 @@
-<img width="1536" height="1024" alt="JWT_Bypass" src="https://github.com/user-attachments/assets/c24a6e16-b32b-40b3-acb2-36114c7407ca" />
+<img alt="JWT_Bypass" src="https://github.com/user-attachments/assets/c24a6e16-b32b-40b3-acb2-36114c7407ca" />
 
 ### >_ Introduction
 A JSON Web Token (JWT) is a compact, URL-safe string used to carry claims between parties — typically for authentication and authorization in web apps and APIs. It consists of three parts (header, payload, signature) encoded in Base64URL and joined by dots. The header declares the token type and algorithm, the payload holds claims (like user id, roles, expiry), and the signature lets the receiver verify the token wasn’t tampered with. Because JWTs are self-contained and stateless, servers can validate them without keeping session state, but they must correctly verify the signature and check claims like expiration and audience.
@@ -7,18 +7,18 @@ A JWT bypass is when an attacker gains access to protected resources by exploiti
 Note: We will be using Burp Suite JWT Editor in all tutorial. You can download it at Bapp Store.
 
 ### >_ Unverified Signature
-If the server doesn't verify a JWT's signature, any payload fields—username, role, permissions, etc.—can be altered by an attacker. For example, changing role: "administrator" and sending the modified token will be accepted, granting elevated access. The result is authentication bypass, privilege escalation, and possible account/data compromise.
+If the server doesn't verify a JWT's signature, any payload fields—username, role, permissions, etc.—can bealtered by an attacker. For example, changing role: "administrator" and sending the modified token will be accepted, granting elevated access. The result is authentication bypass, privilege escalation, and possible account/data compromise.
 
-<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss1.png" />
+<img alt="JWT_Bypass" src="./img/ss1.png" />
 
-<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss2.png" />
+<img alt="JWT_Bypass" src="./img/ss2.png" />
 
 ### >_ Flawed Signature Verification (None Signature)
 If a server accepts alg: "none" and skips signature verification, an attacker can remove the signature and use a forged payload to gain any privileges.JWT verification should confirm the signature proves the token wasn’t tampered with. If the server blindly trusts the token header and treats alg: "none" as “no signature required,” it never checks that the payload is legitimate — so any claims (username, role, permissions) can be changed and accepted.
 
-<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss3.png" />
+<img alt="JWT_Bypass" src="./img/ss3.png" />
 
-<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss4.png" />
+<img alt="JWT_Bypass" src="./img/ss4.png" />
 
 ### >_ Weak Signing Key
 It brute‑forces the JWT secret using hashcat. Then, using the recovered secret, change the JWT payload on "jwt.io".
@@ -27,25 +27,25 @@ It brute‑forces the JWT secret using hashcat. Then, using the recovered secret
  hashcat -a 0 -m 16500 <YOUR-JWT> /path/to/jwt.secrets.list 
 ```
 
-<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss5.png" />
+<img alt="JWT_Bypass" src="./img/ss5.png" />
 
-<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss6.png" />
+<img alt="JWT_Bypass" src="./img/ss6.png" />
 
-<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss7.png" />
+<img alt="JWT_Bypass" src="./img/ss7.png" />
 
 
 ### >_ JWK Header Injection
 A JWK header is a field in a JWT header that can carry information about a JSON Web Key (a public key) used to verify the token. When a server accepts a JWK supplied inside the token header, it may use that attacker-controlled public key to validate the token’s signature.
 
-<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss8.png" />
+<img alt="JWT_Bypass" src="./img/ss8.png" />
 
-<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss9.png" />
+<img alt="JWT_Bypass" src="./img/ss9.png" />
 
-<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss10.png" />
+<img alt="JWT_Bypass" src="./img/ss10.png" />
 
-<img alt="JWT_Bypass" src="./img/ss12.png" />
+<imgalt="JWT_Bypass" src="./img/ss12.png" />
 
-<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss11.png" />
+<img alt="JWT_Bypass" src="./img/ss11.png" />
 
 
 ### >_ JKU (JSON Web Key) Header Injection
