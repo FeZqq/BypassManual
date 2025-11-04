@@ -43,13 +43,25 @@ A JWK header is a field in a JWT header that can carry information about a JSON 
 
 <img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss10.png" />
 
-<img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss12.png" />
+<img alt="JWT_Bypass" src="./img/ss12.png" />
 
 <img width="1536" height="1024" alt="JWT_Bypass" src="./img/ss11.png" />
 
 
 ### >_ JKU (JSON Web Key) Header Injection
-JKU header is the URL information located in the header section of the JWT structure and indicating where the JWK cluster is located.
+JKU header is the URL information located in the header section of the JWT structure and indicating where the JWK cluster is located. So, if the server accept and use JKU header we can change any payload in JWT easily.
+
+Step 1: Creating RSA key and add key on our exploit server as body.
+
+
+Paste JWK in these structure:
+```
+{
+    "keys": [
+
+    ]
+}
+```
 
 
 ### >_ Kid Header Path Traversal
