@@ -43,7 +43,7 @@ A JWK header is a field in a JWT header that can carry information about a JSON 
 
 <img alt="JWT_Bypass" src="./img/ss10.png" />
 
-<imgalt="JWT_Bypass" src="./img/ss12.png" />
+<img alt="JWT_Bypass" src="./img/ss12.png" />
 
 <img alt="JWT_Bypass" src="./img/ss11.png" />
 
