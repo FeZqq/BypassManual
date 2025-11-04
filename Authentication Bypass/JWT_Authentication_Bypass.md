@@ -69,6 +69,9 @@ Paste JWK in these structure:
 ```
 <img alt="JWT_Bypass" src="./img/ss15.png" />
 
+Step 2: Add "JKU" header, change "kid" value with your RSA key's kid value  and sign with the RSA key with your payload (ex: "sub":"administrator").
+
+<img alt="JWT_Bypass" src="./img/ss16.png" />
 
 ### >_ Kid Header Path Traversal
 Will be continue..
