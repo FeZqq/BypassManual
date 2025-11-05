@@ -74,7 +74,11 @@ Step 2: Add "JKU" header, change "kid" value with your RSA key's kid value  and 
 <img alt="JWT_Bypass" src="./img/ss16.png" />
 
 ### >_ Kid Header Path Traversal
-Will be continue..
+The kid header is just an identifier the server uses to look up the key for verifying a JWT. If the server naively treats kid as a filesystem path and doesn’t sanitize it, an attacker can perform path traversal (e.g. ../../../../../../dev/null) to make the server read an attacker-controlled or empty file as the key. When the server uses a symmetric algorithm like HS256, the same secret is used to sign and verify tokens, so an attacker who can predict or force the server to read a trivial key (such as an empty value) can create a token with sub: "administrator", sign it with that trivial secret, and the server will accept it. This is how the JWT bypass works: unsanitized kid → path traversal → predictable key → attacker-signed HMAC token accepted as valid. (Related failures include algorithm-confusion where alg is trusted blindly; forcing HS256 when the server expected RS256 can enable similar attacks.)
+
+
+
+
 
 ### >_ Algorithm Confusion
 Will be continue..
