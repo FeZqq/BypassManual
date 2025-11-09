@@ -87,9 +87,30 @@ Step 2: Change the kid value to empty file and change sub payload to what you wa
 
 
 ### >_ Algorithm Confusion
-Will be continue..
+The root cause is an algorithm‑confusion vulnerability: the server trusts the JWT’s client‑supplied alg value and/or fails to enforce key‑type checks, so an attacker can trick a verifier that normally uses an asymmetric scheme (e.g. RS256 with a public JWK published at /jwks.json) into accepting a symmetric HMAC token (e.g. HS256) by reusing the publicly available RSA key material as the HMAC secret; the described technique simply converts the published JWK/PEM into a form the signing tool accepts (PEM → Base64 → k in a symmetric JWK) and then crafts a token with an elevated sub and alg: HS256, which the misconfigured server validates because it treats the public key as the HMAC secret — the fix is to stop trusting alg from the client and enforce algorithm/key‑type whitelists and proper JWKS/key handling.
 
-### >_ No Exposed Key
+First Request:
+<img alt="JWT_Bypass" src="./img/ss20.png" />
+
+Getting Public Key:
+<img alt="JWT_Bypass" src="./img/ss21.png" />
+
+Creating HS256 Key via Public Key:
+<img alt="JWT_Bypass" src="./img/ss22.png" />
+
+<img alt="JWT_Bypass" src="./img/ss22.png" />
+
+<img alt="JWT_Bypass" src="./img/ss23.png" />
+
+<img alt="JWT_Bypass" src="./img/ss24.png" />
+
+<img alt="JWT_Bypass" src="./img/ss25.png" />
+
+Signing & Result:
+<img alt="JWT_Bypass" src="./img/ss26.png" />
+
+
+### >_ No Exposed Public Key
 Will be continue..
 
 
