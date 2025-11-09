@@ -110,7 +110,5 @@ Signing & Result:
 <img alt="JWT_Bypass" src="./img/ss26.png" />
 
 
-### >_ No Exposed Public Key
-Will be continue..
 
 
